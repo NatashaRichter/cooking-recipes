@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
 
+        // Add any third party folders to this list
         watch: {
             files: [
                 'assets/**/*.less',
@@ -23,12 +24,16 @@ module.exports = function(grunt) {
 
                 '*.js'
             ],
-            tasks: 'exec'
+            tasks: 'exec:compile'
         },
 
         exec: {
             compile: {
-                command: 'ssc b',
+                command: 'ssc build',
+                stdout: true
+            },
+            deploy: {
+                command: 'ssc deploy',
                 stdout: true
             }
         },
@@ -41,7 +46,8 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', 'server watch');
+    grunt.registerTask('default', 'exec:compile server watch');
+    grunt.registerTask('deploy', 'exec');
 
     // Import tasks
     grunt.loadNpmTasks('grunt-exec');

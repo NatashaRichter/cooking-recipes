@@ -1,23 +1,17 @@
 <data>
 {
-    "urlPath": ""
+    "urlPath": "",
+    "navActive": "Home",
+    "layout": "index"
 }
 </data>
-
-<js>
-
-    this.files = _.pluck(site.pages, 'id');
-    this.layouts = _.pluck(site.layouts, 'id');
-    this.partials = _.pluck(site.partials, 'id');
-
-</js>
 
 <hr>
 
 <div class="jumbotron">
-    <h1>Super awesome marketing speak!</h1>
-    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <a class="btn btn-large btn-success" href="#">Sign up today</a>
+    <h1>Welcome to SSC</h1>
+    <p class="lead">Lets take a quick sneak peak at what you can do!</p>
+    <!--<a class="btn btn-large btn-success" href="#">Sign up today</a>-->
 </div>
 
 <hr>
@@ -26,19 +20,25 @@
 <div class="row-fluid marketing">
 
     <div class="span6">
-        <h4>Compile Time Generation</h4>
-        <p>These are all generated at compile time</p>
+        <h4>Simple Site Generation</h4>
+        <p>SSC aims to be a simple, static site compiler. Getting up and running takes minutes, letting you not worry about the setup and get right to making your website!</p>
 
-        <h4>Partials in this Project</h4>
-        <p>{{partials}}</p>
+        <h4>Dynamic Imports</h4>
+        <p>Load in partials, layouts, and more, with powerful directives.</p>
+        <h4>Starter Project with Bootstrap</h4>
+        <p>Get started quickly with a preconfigured project using bootstrap.</p>
     </div>
 
     <div class="span6">
-        <h4>Pages in this Project</h4>
-        <p>{{files}}</p>
 
-        <h4>Layouts in this Project</h4>
-        <p>{{layouts}}</p>
+        <h4>"Serverside" Scripting in Javascript</h4>
+        <p>You have full access to the full site and current page objects via javascript within each page, partial, and layout. Utilize powerful functional methods with UnderscoreJS while writing server side javascript.</p>
+
+        <h4>Meta Data</h4>
+        <p>Data about pages, layouts, partials, all intelligently flow through the site.</p>
+
+        <h4>Templating</h4>
+        <p>Utilize Markdown and MustacheJS to accomplish all the templeting you need!</p>
     </div>
 
 </div>

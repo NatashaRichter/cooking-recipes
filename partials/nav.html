@@ -1,8 +1,30 @@
+
+<js>
+
+// Define all the links you want in your navigation
+this.nav = [
+    {url: '/', title: 'Home'},
+    {url: '/install.html', title: 'Installation'},
+    {url: '/', title: 'Directives'},
+    {url: '/', title: 'Docs'}
+];
+
+_.each(this.nav, function(navEl) {
+    if (this.navActive && this.navActive === navEl.title) {
+        navEl.active = true;
+    }
+}, this);
+
+</js>
+
 <div class="masthead">
     <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        {{#nav}}
+        <li {{#active}}class="active"{{/active}}>
+            <a href="{{url}}">{{title}}</a>
+        </li>
+        {{/nav}}
     </ul>
-    <h3 class="muted">Project name</h3>
+    <h3 class="muted">SSC</h3>
 </div>
+
