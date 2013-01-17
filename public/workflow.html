@@ -65,19 +65,19 @@
 <div class="masthead">
     <ul class="nav nav-pills pull-right">
         <li >
-            <a href="/ssc-start/" >Home</a>
+            <a href="/" >Home</a>
         </li>
         <li >
-            <a href="/ssc-start/install.html" >Installation</a>
+            <a href="/install.html" >Installation</a>
         </li>
         <li class="active">
-            <a href="/ssc-start/workflow.html" >Workflow</a>
+            <a href="/workflow.html" >Workflow</a>
         </li>
         <li >
-            <a href="/ssc-start/templates.html" >Templating</a>
+            <a href="/templates.html" >Templating</a>
         </li>
         <li >
-            <a href="/ssc-start/docs.html" >Docs</a>
+            <a href="/docs.html" >Docs</a>
         </li>
     </ul>
     <h3 class="muted">SSC</h3>
@@ -90,7 +90,52 @@
     <div class="row-fluid marketing">
 
         <h1>How to Work With SSC</h1>
-<p>There are two ways you can interact with SSC, directly via the <code>ssc</code> command and via grunt.
+<p>There are two ways you can interact with SSC, directly via the <code>ssc</code> command and via grunt. There is no hard requirement to have grunt installed, however the starter site comes with some nice features facilitated by grunt.
+
+</p>
+<h3>Command Line Usage</h3>
+<p>SSC has several command line options, building, deploying, initiating.
+
+</p>
+<h4>Build</h4>
+<pre><code>ssc (b | build) [p | production]</code></pre>
+<p>The <code>build</code> command can be invoked by either <code>b</code> or <code>build</code>. It has an option flag to build for production. This type of build modifies links to point to your specified sub-domain. 
+
+</p>
+<h4>Initialize</h4>
+<pre><code>ssc (i | init) &lt;folder name&gt;</code></pre>
+<p>The <code>init</code> command clones this very website to the folder name you specify.
+
+</p>
+<h4>Deploy</h4>
+<pre><code>ssc (d | deploy)</code></pre>
+<p>The <code>deploy</code> command automates the process of moving your compiled public folder to your deployment branch. You can specify which branch houses your source code and which branch houses your deployments in the <code>settings.js</code> file.
+
+</p>
+<p><em>Before you invoke deploy, make sure to commit all your changes in your source branch.</em>
+
+</p>
+<p><code>deploy</code> does several things for you. It first checks out your deployment branch. From here, it cleans out the branch, and copies over your public folder from your source branch. Now you have the contents of your public folder ready for deployment to your server! This is a typical work flow for deployment:
+
+</p>
+<pre><code>*Working in source branch*
+ssc build production
+git add .
+git commit -a -m &quot;Added new pages to site!&quot;
+ssc deploy
+git add .
+git commit -a -m &quot;Updating web page...&quot;
+git push</code></pre>
+<p>Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
+
+
+</p>
+<h3>Grunt Usage</h3>
+<p>There one main usage for grunt, that is to watch and compiling your project. Running <code>grunt</code> from anywhere in your project will first, compile your project, it will then spin up a server on port <code>8080</code>, and lastly it will watch a subset of your folders for any changes and re-compile the site on the fly. You can add more folders by modifying the <code>files</code> array under the <code>watch</code> object.
+
+</p>
+<p>You can easily add more grunt processes and hook them into your watch direct. For example, you could add a LessCSS compilation step that compiles less code in your public folder.
+
 </p>
 
 

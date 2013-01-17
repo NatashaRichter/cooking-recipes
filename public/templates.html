@@ -65,19 +65,19 @@
 <div class="masthead">
     <ul class="nav nav-pills pull-right">
         <li >
-            <a href="/ssc-start/" >Home</a>
+            <a href="/" >Home</a>
         </li>
         <li >
-            <a href="/ssc-start/install.html" >Installation</a>
+            <a href="/install.html" >Installation</a>
         </li>
         <li >
-            <a href="/ssc-start/workflow.html" >Workflow</a>
+            <a href="/workflow.html" >Workflow</a>
         </li>
         <li class="active">
-            <a href="/ssc-start/templates.html" >Templating</a>
+            <a href="/templates.html" >Templating</a>
         </li>
         <li >
-            <a href="/ssc-start/docs.html" >Docs</a>
+            <a href="/docs.html" >Docs</a>
         </li>
     </ul>
     <h3 class="muted">SSC</h3>
@@ -89,42 +89,43 @@
 
     <div class="row-fluid marketing">
 
-        <h1>How to Template</h1>
-<p>Awesome, So you decided to try out SSC! Lets get started with installing the command line tool.
+        <h1>Templates and Directives</h1>
+<p>SSC has a few built in directives to help you develop your site. 
 
 </p>
-<h3>Command Line Installation</h3>
-<p>You can install SSC two ways.  You may want the second option if you want to contribute to the source code.
+<h3>Partials</h3>
+<p>A partial is any chunk of code or content that gets repeatedly used accross your site. Perhaps it is your navigation, your footer, a tag cloud, a partial can be anything. It can consist of dynamic or static code.
 
 </p>
-<p><strong>Normal</strong>
+<p>One thing to note, you can give your partial meta data and dynamic code. When you do this, its contents will be transfered over to the page it gets inserted into. If the page already has meta data which the partial defines, the page will always take precedence retaining its information.
 
 </p>
-<p>First, you can use NPM to install it via <code>npm install -g ssc</code>. This will take care of updates and linking for you. 
+<p><strong>Example:</strong> How to make a simple nav element. We would put this code within <code>partials/nav.html</code> and surround it with <code>&lt;js&gt;</code> tags.
 
 </p>
-<p><strong>Development</strong>
+<pre><code>this.nav = [
+    {url: &#39;&#39;, title: &#39;Home&#39;},
+    {url: &#39;install.html&#39;, title: &#39;Installation&#39;},
+    {url: &#39;workflow.html&#39;, title: &#39;Workflow&#39;},
+    {url: &#39;templates.html&#39;, title: &#39;Templating&#39;},
+    {url: &#39;docs.html&#39;, title: &#39;Docs&#39;}
+];
+
+_.each(this.nav, function(navEl) {
+    if (this.navActive &amp;&amp; this.navActive === navEl.title) {
+        navEl.active = true;
+    }
+}, this);</code></pre>
+<p>The <code>this</code> keyword referees to the final page object which the nav partial gets imported into. Instead of making the making the links by hand, you could easily poll the <code>site</code> object like so.
 
 </p>
-<p>Alternativly, you can grab the <a href="https://github.com/kaw2k/static-site-compiler">source</a> from github. You will have to link the bin file to wherever you have your scripts. For example:
+<pre><code>this.nav = _.filter(site.pages, function(page) {
+    return page.type === &#39;page&#39;;
+});</code></pre>
+<p>Now, instead of using the custom <code>url</code> field, we would use <code>urlFull</code> which is a property of the page object.
 
 </p>
-<pre><code>cd /usr/local/bin/
-ln -s ~/Development/static-site-compiler/ssj.js ssc</code></pre>
-<h3>Starter Site</h3>
-<p>Once you have SSC installed, you can get started quickly with a template site. Navigate to where you want your site to be kept and run the command:
-
-</p>
-<pre><code>ssc init &lt;folder name&gt;</code></pre>
-<p><code>&lt;folder name&gt;</code> should be whatever you want the project folder to be called.  This command will grab the template site from GitHub and clone it in the folder you specified.
-
-</p>
-<p>From here, <code>cd</code> into the directory and change the origion of your git repository to point to your own GitHub repository.
-
-</p>
-<pre><code>cd &lt;folder name&gt;
-git remote rm origin
-git remote add origin &lt;url&gt;</code></pre>
+<h3>Layouts</h3>
 
 
     </div>

@@ -19,9 +19,6 @@ module.exports = function(grunt) {
                 'partials/*.md',
                 'partials/*.html',
 
-                'lessons/*.md',
-                'lessons/*.html',
-
                 '*.js'
             ],
             tasks: 'exec:compile'
@@ -32,6 +29,10 @@ module.exports = function(grunt) {
                 command: 'ssc build',
                 stdout: true
             },
+            compileP: {
+                command: 'ssc build production',
+                stdout: true
+            }
             deploy: {
                 command: 'ssc deploy',
                 stdout: true
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
 
     // Default task.
     grunt.registerTask('default', 'exec:compile server watch');
-    grunt.registerTask('deploy', 'exec');
+    grunt.registerTask('deploy', 'exec:compileP exec:deploy');
 
     // Import tasks
     grunt.loadNpmTasks('grunt-exec');
