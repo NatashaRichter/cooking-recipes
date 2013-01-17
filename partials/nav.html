@@ -3,12 +3,13 @@
 
 // Define all the links you want in your navigation
 this.nav = [
-    {url: '/', title: 'Home'},
-    {url: '/install.html', title: 'Installation'},
-    {url: '/workflow.html', title: 'Workflow'},
-    {url: '/templates.html', title: 'Templating'},
-    {url: '/docs.html', title: 'Docs'}
+    {url: '', title: 'Home'},
+    {url: 'install.html', title: 'Installation'},
+    {url: 'workflow.html', title: 'Workflow'},
+    {url: 'templates.html', title: 'Templating'},
+    {url: 'docs.html', title: 'Docs'}
 ];
+
 
 _.each(this.nav, function(navEl) {
     if (this.navActive && this.navActive === navEl.title) {
@@ -22,7 +23,7 @@ _.each(this.nav, function(navEl) {
     <ul class="nav nav-pills pull-right">
         {{#nav}}
         <li {{#active}}class="active"{{/active}}>
-            <a href="{{url}}">{{title}}</a>
+            <a href="~{{url}}">{{title}}</a>
         </li>
         {{/nav}}
     </ul>
