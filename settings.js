@@ -18,5 +18,5 @@ site.settings = {
     devBranch: 'source',
 
     // The branch your production files are in, defaults to 'master'
-    depBranch: 'master'
+    depBranch: 'gh-pages'
 }
