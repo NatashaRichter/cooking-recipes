@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             compileP: {
                 command: 'ssc build production',
                 stdout: true
-            }
+            },
             deploy: {
                 command: 'ssc deploy',
                 stdout: true
