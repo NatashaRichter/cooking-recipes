@@ -128,8 +128,28 @@ git commit -a -m &quot;Updating web page...&quot;
 git push</code></pre>
 <p>Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
 
+</p>
+<h4>Generate</h4>
+<pre><code>ssc (generate | g)</code></pre>
+<p>When you want to add a file to your site, you can choose to do it manually, or use the <code>generate</code> command to give you a template file. It will ask you several question which dictate will go into the meta data of the file.
 
 </p>
+<p>Where you are when you execute the generate command does matter. It will generate files relative to your current location. 
+
+</p>
+<p>Lets go over the questions it will ask:
+
+</p>
+<ul>
+<li><strong>Type of file:</strong> The type of file dictates where the file will live in your source code branch. For example, all files of type <code>page</code> will live in the <code>page/</code> folder. </li>
+<li><strong>Filename:</strong> The name of the file as it is seen in the source code branch.</li>
+<li><strong>Extension:</strong> The extension of the file.</li>
+<li><strong>ID:</strong> SSC uses id&#39;s to differentiate files. If no ID is given, a file uses its filename as its ID. It is a good practice to provide IDs so there are no conflicts as your site grows larger.</li>
+<li><strong>Url Name:</strong> This variable dictates the last segment of the url the file will have once it is in production. For example, if you have a file <code>help.html</code> and a site root of <code>kaw2k.github.com/</code>, by default, the file will live at <code>kaw2k.github.com/help.html</code>. If you change the <code>urlName</code> variable to <code>live.html</code> then the new page would live at <code>kaw2k.github.com/live.html</code>.</li>
+<li><p><strong>Url Path:</strong> This variable dictates the segments between the root of your website and the last segment of the url. For example, lets say you have a file <code>help.html</code> and it lives in <code>pages/</code> in your source branch. By default, it will have <code>page</code> as a url segment, making the final url be <code>kaw2k.github.com/page/help.html</code>. If you provide <code>contact/</code> as the value, the new url would be <code>kaw2k.github.com/contact/help.html</code>.</p>
+<p>  Using <code>/</code> as a value will have the page live in the root of your project. Notice however, in the generated file, the actual value will be empty. This is the correct value. A limitation with the command line interface requires the us of a <code>/</code> for this value.</p>
+</li>
+</ul>
 <h3>Grunt Usage</h3>
 <p>There one main usage for grunt, that is to watch and compiling your project. Running <code>grunt</code> from anywhere in your project will first, compile your project, it will then spin up a server on port <code>8080</code>, and lastly it will watch a subset of your folders for any changes and re-compile the site on the fly. You can add more folders by modifying the <code>files</code> array under the <code>watch</code> object.
 

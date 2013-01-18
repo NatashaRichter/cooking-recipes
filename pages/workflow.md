@@ -47,6 +47,24 @@ The `deploy` command automates the process of moving your compiled public folder
     
 Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
 
+#### Generate
+
+    ssc (generate | g)
+
+When you want to add a file to your site, you can choose to do it manually, or use the `generate` command to give you a template file. It will ask you several question which dictate will go into the meta data of the file.
+
+Where you are when you execute the generate command does matter. It will generate files relative to your current location. 
+
+Lets go over the questions it will ask:
+
+- **Type of file:** The type of file dictates where the file will live in your source code branch. For example, all files of type `page` will live in the `page/` folder. 
+- **Filename:** The name of the file as it is seen in the source code branch.
+- **Extension:** The extension of the file.
+- **ID:** SSC uses id's to differentiate files. If no ID is given, a file uses its filename as its ID. It is a good practice to provide IDs so there are no conflicts as your site grows larger.
+- **Url Name:** This variable dictates the last segment of the url the file will have once it is in production. For example, if you have a file `help.html` and a site root of `kaw2k.github.com/`, by default, the file will live at `kaw2k.github.com/help.html`. If you change the `urlName` variable to `live.html` then the new page would live at `kaw2k.github.com/live.html`.
+- **Url Path:** This variable dictates the segments between the root of your website and the last segment of the url. For example, lets say you have a file `help.html` and it lives in `pages/` in your source branch. By default, it will have `page` as a url segment, making the final url be `kaw2k.github.com/page/help.html`. If you provide `contact/` as the value, the new url would be `kaw2k.github.com/contact/help.html`.
+
+    Using `/` as a value will have the page live in the root of your project. Notice however, in the generated file, the actual value will be empty. This is the correct value. A limitation with the command line interface requires the us of a `/` for this value.
 
 ### Grunt Usage
 
