@@ -14,6 +14,7 @@ for(i = 0; i < toWatch.length; i++) {
 // Add default folders to the mix
 toWatch = toWatch.concat([
 	'posts/*',
+	'partials/*',
 	'assets/*',
 	'layouts/*',
 	'pages/*',
@@ -22,7 +23,7 @@ toWatch = toWatch.concat([
 ]);
 
 module.exports = function(grunt) {
-	
+
     // Project configuration.
     grunt.initConfig({
 
