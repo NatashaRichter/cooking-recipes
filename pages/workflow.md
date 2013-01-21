@@ -34,6 +34,7 @@ The `deploy` command automates the process of committing and moving your compile
 
 When you are finished working on your site and are ready to publish, this would be a typical workflow:
 
+    ssc build production
     ssc deploy "Adding new pages!"
     git push
 
