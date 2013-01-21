@@ -28,13 +28,28 @@ The `init` command clones this very website to the folder name you specify.
 
 #### Deploy
 
-    ssc (d | deploy)
+    ssc (d | deploy) "Message that will be commited via git"
 
-The `deploy` command automates the process of moving your compiled public folder to your deployment branch. You can specify which branch houses your source code and which branch houses your deployments in the `settings.js` file.
+The `deploy` command automates the process of committing and moving your compiled public folder to your deployment branch. You can specify which branch houses your source code and which branch houses your deployments in the `settings.js` file. This command uses `git add .` and `git commit -a -m "message"`.
 
-*Before you invoke deploy, make sure to commit all your changes in your source branch.*
+When you are finished working on your site and are ready to publish, this would be a typical workflow:
 
-`deploy` does several things for you. It first checks out your deployment branch. From here, it cleans out the branch, and copies over your public folder from your source branch. Now you have the contents of your public folder ready for deployment to your server! This is a typical work flow for deployment:
+    ssc deploy "Adding new pages!"
+    git push
+
+**NB:** After you run this command, you will be left in your `master`, or whichever branch you specified in your `settings.js` file.
+
+Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
+
+#### Switch
+
+    ssc (s | switch)
+
+The `switch` command is similar to `deploy`, however it does not commit anything for you. Use this command if you want fine tuned control over what to commit. Perhaps if you are not ready to commit certain pages yet, use this command.
+
+*Before you invoke switch, make sure to commit all your changes in your source branch.*
+
+`switch` does several things for you. It first checks out your deployment branch. From here, it cleans out the branch, and copies over your public folder from your source branch. Now you have the contents of your public folder ready for deployment to your server! This is a typical work flow for deployment:
 
     *Working in source branch*
     ssc build production
@@ -44,8 +59,8 @@ The `deploy` command automates the process of moving your compiled public folder
     git add .
     git commit -a -m "Updating web page..."
     git push
-    
-Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
+
+**NB:** After you run this command, you will be left in your `master`, or whichever branch you specified in your `settings.js` file.
 
 #### Generate
 

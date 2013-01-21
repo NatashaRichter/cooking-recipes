@@ -16,7 +16,7 @@ site.settings = {
     trimHTML: false,
 
     // Add any custom folders to this array i.e. "videos/"
-    // Defaults include posts, and pages
+    // Defaults include 'posts/', and 'pages/'
     inputFolders: [],
 
     // The branch your source files are in, defaults to 'source'
@@ -28,3 +28,4 @@ site.settings = {
 
 // If you want to tack on any other information or functions
 // to the site object, you can do so here.
+// These methods will be available in <js> tags within your pages.

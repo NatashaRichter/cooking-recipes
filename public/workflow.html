@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/ssc-start/assets/less/bootstrap.less" rel="stylesheet/less" type="text/css" >
+    <link href="/assets/less/bootstrap.less" rel="stylesheet/less" type="text/css" >
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -65,19 +65,19 @@
 <div class="masthead">
     <ul class="nav nav-pills pull-right">
         <li >
-            <a href="/ssc-start/" >Home</a>
+            <a href="/" >Home</a>
         </li>
         <li >
-            <a href="/ssc-start/install.html" >Installation</a>
+            <a href="/install.html" >Installation</a>
         </li>
         <li class="active">
-            <a href="/ssc-start/workflow.html" >Workflow</a>
+            <a href="/workflow.html" >Workflow</a>
         </li>
         <li >
-            <a href="/ssc-start/templates.html" >Templating</a>
+            <a href="/templates.html" >Templating</a>
         </li>
         <li >
-            <a href="/ssc-start/docs.html" >Docs</a>
+            <a href="/docs.html" >Docs</a>
         </li>
     </ul>
     <h3 class="muted">SSC</h3>
@@ -108,14 +108,30 @@
 
 </p>
 <h4>Deploy</h4>
-<pre><code>ssc (d | deploy)</code></pre>
-<p>The <code>deploy</code> command automates the process of moving your compiled public folder to your deployment branch. You can specify which branch houses your source code and which branch houses your deployments in the <code>settings.js</code> file.
+<pre><code>ssc (d | deploy) &quot;Message that will be commited via git&quot;</code></pre>
+<p>The <code>deploy</code> command automates the process of committing and moving your compiled public folder to your deployment branch. You can specify which branch houses your source code and which branch houses your deployments in the <code>settings.js</code> file. This command uses <code>git add .</code> and <code>git commit -a -m &quot;message&quot;</code>.
 
 </p>
-<p><em>Before you invoke deploy, make sure to commit all your changes in your source branch.</em>
+<p>When you are finished working on your site and are ready to publish, this would be a typical workflow:
 
 </p>
-<p><code>deploy</code> does several things for you. It first checks out your deployment branch. From here, it cleans out the branch, and copies over your public folder from your source branch. Now you have the contents of your public folder ready for deployment to your server! This is a typical work flow for deployment:
+<pre><code>ssc deploy &quot;Adding new pages!&quot;
+git push</code></pre>
+<p><strong>NB:</strong> After you run this command, you will be left in your <code>master</code>, or whichever branch you specified in your <code>settings.js</code> file.
+
+</p>
+<p>Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
+
+</p>
+<h4>Switch</h4>
+<pre><code>ssc (s | switch)</code></pre>
+<p>The <code>switch</code> command is similar to <code>deploy</code>, however it does not commit anything for you. Use this command if you want fine tuned control over what to commit. Perhaps if you are not ready to commit certain pages yet, use this command.
+
+</p>
+<p><em>Before you invoke switch, make sure to commit all your changes in your source branch.</em>
+
+</p>
+<p><code>switch</code> does several things for you. It first checks out your deployment branch. From here, it cleans out the branch, and copies over your public folder from your source branch. Now you have the contents of your public folder ready for deployment to your server! This is a typical work flow for deployment:
 
 </p>
 <pre><code>*Working in source branch*
@@ -126,7 +142,7 @@ ssc deploy
 git add .
 git commit -a -m &quot;Updating web page...&quot;
 git push</code></pre>
-<p>Assuming you are using GitHub pages, this will update your site for you automatically. If you are using another host, you will need to set up post-receive hooks to updated your server code.
+<p><strong>NB:</strong> After you run this command, you will be left in your <code>master</code>, or whichever branch you specified in your <code>settings.js</code> file.
 
 </p>
 <h4>Generate</h4>
@@ -174,20 +190,20 @@ git push</code></pre>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/ssc-start/assets/js/vendor/jquery-1.8.3.min.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/less.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-transition.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-alert.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-modal.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-dropdown.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-scrollspy.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-tab.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-tooltip.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-popover.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-button.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-collapse.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-carousel.js" ></script>
-    <script src="/ssc-start/assets/js/vendor/bootstrap-typeahead.js" ></script>
+    <script src="/assets/js/vendor/jquery-1.8.3.min.js" ></script>
+    <script src="/assets/js/vendor/less.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-transition.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-alert.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-modal.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-dropdown.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-scrollspy.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-tab.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-tooltip.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-popover.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-button.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-collapse.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-carousel.js" ></script>
+    <script src="/assets/js/vendor/bootstrap-typeahead.js" ></script>
 
 		<!-- Google Analytics -->
 		<script type="text/javascript">
