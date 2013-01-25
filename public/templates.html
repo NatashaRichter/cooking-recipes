@@ -68,10 +68,10 @@
             <a href="/ssc-start/" >Home</a>
         </li>
         <li >
-            <a href="/ssc-start/install.html" >Installation</a>
+            <a href="/ssc-start/getting-started.html" >Getting Started</a>
         </li>
         <li >
-            <a href="/ssc-start/workflow.html" >Workflow</a>
+            <a href="/ssc-start/command-line.html" >CLI Commands</a>
         </li>
         <li class="active">
             <a href="/ssc-start/templates.html" >Templating</a>
@@ -126,6 +126,14 @@ _.each(this.nav, function(navEl) {
 
 </p>
 <h3>Layouts</h3>
+<p>Every page of content on your site will get inserted into a layout during compilation. This way, you do not need to worry about the structure of your pages while you are writing them. Be default, the layout is the <em>singular</em> version of the folder the file lives in. For example, all pages found in the <code>pages/</code> directory have a layout of <code>page</code>.
+
+</p>
+<p>You can manually over ride this by giving the file a meta data value of <code>&quot;layout&quot;: &quot;someOtherFile&quot;</code> where the value is the id of the layout you are targeting. If no layout is found, the <code>index</code> layout is used.
+
+</p>
+<p>Within layouts, you have access to two special properties, <code>@partials</code> and <code>@place</code>. The partial directive searches the <code>partials/</code> folder and inserts the result into the current page. The place directive searches the incoming page for a property and inserts it into the page. For example, if you have <code>@place(&#39;id&#39;)</code> it would place the id of the current page. Right now, it defaults to the <code>file</code> property which is the compiled HTML of every page.
+</p>
 
 
     </div>

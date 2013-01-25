@@ -42,3 +42,8 @@ Now, instead of using the custom `url` field, we would use `urlFull` which is a 
 
 ### Layouts
 
+Every page of content on your site will get inserted into a layout during compilation. This way, you do not need to worry about the structure of your pages while you are writing them. Be default, the layout is the *singular* version of the folder the file lives in. For example, all pages found in the `pages/` directory have a layout of `page`.
+
+You can manually over ride this by giving the file a meta data value of `"layout": "someOtherFile"` where the value is the id of the layout you are targeting. If no layout is found, the `index` layout is used.
+
+Within layouts, you have access to two special properties, `@partials` and `@place`. The partial directive searches the `partials/` folder and inserts the result into the current page. The place directive searches the incoming page for a property and inserts it into the page. For example, if you have `@place('id')` it would place the id of the current page. Right now, it defaults to the `file` property which is the compiled HTML of every page.

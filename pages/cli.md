@@ -1,8 +1,8 @@
 <data>
 {
     "urlPath": "",
-    "urlName": "workflow",
-    "navActive": "Workflow"
+    "urlName": "command-line",
+    "navActive": "CLI Commands"
 }
 </data>
 
