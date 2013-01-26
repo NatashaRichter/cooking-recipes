@@ -38,7 +38,7 @@ The `this` keyword referees to the final page object which the nav partial gets 
         return page.type === 'page';
     });
 
-Now, instead of using the custom `url` field, we would use `urlFull` which is a property of the page object.
+Now, instead of using the custom `url` field, we would use `url` which is a property of the page object.
 
 ### Layouts
 

@@ -106,7 +106,7 @@
 
     urlName: &#39;index&#39;,  
     urlPath: &#39;&#39;,
-    urlFull: &#39;pages/index&#39;,
+    url: &#39;~pages/index&#39;,
 
     rawFile: &#39;&#39;,
     file: &#39;&#39;,
@@ -143,8 +143,8 @@
 <li><p><strong>urlPath</strong>:
   The segments of the url between the base and the urlName. If you have a site with a url of <code>kaw2k.github.com/</code> and <code>urlName = &#39;test&#39;</code> as well as <code>urlPath = &#39;lessons/&#39;</code>, then the final url of that page will be <code>kaw2k.github.com/lessons/test.html</code>. If you want the page to reside in the root of the project, use an empty string, <code>urlPath = &#39;&#39;</code>.</p>
 </li>
-<li><p><strong>urlFull</strong>:
-  This is a shortcut to the relative path of the page. It is a combination of the <code>urlPath</code> and <code>urlName</code>.</p>
+<li><p><em>*url</em>:
+  This is the full url to the page object. If you have <code>trimHTML</code> set to true in your settings, then this will omit having the HTML extension. Use this property to link to pages.</p>
 </li>
 <li><p><strong>rawFile</strong>:
   The raw contents of the file, including the meta data and scripts.</p>
@@ -200,20 +200,23 @@
 <p>If for whatever reason you want to add more properties to the <code>site</code> object, you can do so in the <code>/settings.js</code> file.
 
 </p>
-<p>For example, here is a function you can add to filter pages for you. This function will filter out pages of the type you specify, make sure they do not have a property called <code>hidden</code> (useful for posts that are not ready to be published yet), sort them by date, and then return an array.
+<p>For example, here is a function you can add to filter pages for you. This function will filter out pages of the type you specify, make sure they do not have a property called <code>hidden</code> (useful for pates that are not ready to be published yet), sort them by date, and then return an array.
 
 </p>
 <p><em>Add it to the end of your <code>settings.js</code> file</em>.
 
 </p>
-<pre><code>site.orderedType = function (type) {
-    return posts = _.chain(site.pages)
+<pre><code>site.orderedPages = function (type) {
+    return _.chain(site.pages)
         .filter(function(page) {
             return page.type === type &amp;&amp; !page.hidden;
         })
         .toArray()
-        .sortBy(function(post) {
-            return -post.date.value;
+        .sortBy(function(page) {
+            if (!page.date) {
+                return 1;
+            }
+            return -page.date.value;
         })
         .value();
 }</code></pre>
