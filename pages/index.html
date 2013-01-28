@@ -1,0 +1,70 @@
+<data>
+{
+	"id": "index",
+	"urlName": "index",
+	"urlPath": ""
+}
+</data>
+
+<js>
+
+  this.recipies = _.filter(site.pages, function(page) {
+    return page.type === 'recipie';
+  }); 
+
+  this.untested = _.filter(site.pages, function(page) {
+    return page.type === 'untested';
+  }); 
+  
+  this.tags = _.chain(site.tags)
+                .sortBy(function(tag) {
+                    return -_.filter(site.pages, function(page) {
+                        return _.indexOf(page.tags, tag) > -1;
+                    }).length;
+                })
+                .map(function(tag) {
+                    var obj = {tag: tag};
+                    obj.num = _.filter(site.pages, function(page) {
+                        return _.indexOf(page.tags, tag) > -1;
+                    }).length;
+                
+                    return obj;
+                })    
+                .value();
+</js>
+
+
+<h1>Tested</h1>
+<p>Here are a list of recipes that I have tested and like :D</p>
+
+<ul>
+    {{#recipies}}
+    <li>
+        <a href="{{url}}">{{id}}</a>
+    </li>
+    {{/recipies}}
+</ul>
+
+
+
+<h1>Untested</h1>
+<p>These are collected from various sources and are all untested. Use at your own risk ;)</p>
+
+<ul>
+    {{#untested}}
+    <li>
+        <a href="{{url}}">{{id}}</a>
+    </li>
+    {{/untested}}
+</ul>
+
+
+<h2>Tags</h2>
+
+<ul>
+    {{#tags}}
+    <li>
+        <a href="~tags/{{tag}}">{{tag}}</a> ({{num}})
+    </li>
+    {{/tags}}
+</ul>
