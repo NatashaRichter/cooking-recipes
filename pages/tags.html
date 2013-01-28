@@ -1,0 +1,24 @@
+<data>
+{
+	"id": "tags",
+	"urlName": "tags",
+	"urlPath": "pages/"
+}
+</data>
+
+<h1>{{tag}}</h1>
+
+<ul>
+{{#pages}}
+<li>
+        <a href="{{url}}">
+            <h3>{{id}}</h3>
+            <aside>
+                {{#tags}}
+                    <a class="tag" href="~tags/{{.}}">{{.}}</a>
+                {{/tags}}
+            </aside>
+        </a>
+</li>
+{{/pages}}
+</ul>
