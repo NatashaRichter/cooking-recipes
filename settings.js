@@ -17,7 +17,7 @@ site.settings = {
 
     // Add any custom folders to this array i.e. "videos/"
     // Defaults include 'posts/', and 'pages/'
-    inputFolders: ['recipies/', 'untesteds/'],
+    inputFolders: ['recipes/', 'untesteds/'],
 
     // The branch your source files are in, defaults to 'source'
     developmentBranch: 'master',

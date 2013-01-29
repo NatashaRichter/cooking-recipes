@@ -8,8 +8,8 @@
 
 <js>
 
-  this.recipies = _.filter(site.pages, function(page) {
-    return page.type === 'recipie';
+  this.recipes = _.filter(site.pages, function(page) {
+    return page.type === 'recipe';
   }); 
 
   this.untested = _.filter(site.pages, function(page) {
@@ -38,11 +38,11 @@
 <p>Here are a list of recipes that I have tested and like :D</p>
 
 <ul>
-    {{#recipies}}
+    {{#recipes}}
     <li>
         <a href="{{url}}">{{id}}</a>
     </li>
-    {{/recipies}}
+    {{/recipes}}
 </ul>
 
 
