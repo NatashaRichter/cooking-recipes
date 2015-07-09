@@ -10,15 +10,14 @@ Serves 4, 30 min total.
 
 ## Ingredients
 - 2 Tbs butter, divided
-- (1 small onion chopped, 1 cup)
+- 1/4 tsp hing
 - 1 Tbs thinly sliced fresh ginger
-- (2 cloves garlic, peeled, thinly sliced)
 - 2 tsp curry powder
 - 1/2 tsp black mustard seeds
 - 1/2 tsp ground turmeric
 - 1 cup frozen shredded hash browns thawed
 - 3 2/3 cups vegetable broth
-- - 1 1lb frozen spinach bag
+- 1 1lb frozen spinach bag
 - 4 oz paneer cubed
 
 ## Directions
