@@ -24,6 +24,6 @@ Take any flour tortilla shell, warm it normally in the microwave for 30 sec with
 #### Idea
 Make the 6" shells, then make layered taco bowls.
 Refried Beans > Rice > Guacamole > Lettuce > Cheese > Cherry Tomatoes
-For seasoning, toss the shells with hing, sea salt, black pepper.
-You could replace the guacamole with Sour Cream if desired.
+For seasoning, toss the shells with hing, sea salt, and black pepper.
+You could replace the guacamole with sour cream if desired.
 
