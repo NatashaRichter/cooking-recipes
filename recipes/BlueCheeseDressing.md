@@ -8,16 +8,16 @@
 
 Combine: 
 
-- 2.2 oz blue cheeze
-- 3tbs butermilk
+- 2.2 oz blue cheese
+- 3tbs buttermilk
 
-Mash till smooth, then mix with.
+Mash till smooth, then mix together with the following:
 
-- 4tbs sour cream
-- 3tbs mayo
+- 4tbs vegan or regular sour cream
+- 3tbs vegan mayonnaise
 - 2 tsp white viniger
 - 1/4 tsp sugar
-- 1/8 tsp garlic powder
+- 1/8 tsp hing
 
 
 
