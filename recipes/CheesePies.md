@@ -27,10 +27,11 @@ In a small bowl, dissolve the yeast and sugar in the water. Mix well. Cover the 
 - 1 cup feta cheese crumbled
 - parsley cut up (optional)
 - 1 tomato diced
-- 3 sprigs of green onions
 - Olive oil
-- Zaatar
+- Za'atar
 
 ### Directions:
 
 Mix all the ingredients and taste the filling.  If it tastes good and is not too runny/juicy, then the it is ready to be used ;-) if it is too juicy, use a slotted spoon so that when you put the filling inside the dough it does not become soggy. 
+
+### Notes: Za'atar is generally prepared using ground dried thyme, oregano, marjoram, or some combination thereof, mixed with toasted sesame seeds, and salt, though other spices such as sumac might also be added.
