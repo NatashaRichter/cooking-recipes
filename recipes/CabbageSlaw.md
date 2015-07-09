@@ -12,7 +12,7 @@ Ingrediants
 -----------
 
 - 1/2 head shredded cabbage
-- 1 bunch chopped green onion
+- 1/4 tsp hing (asafeotida)
 - 1 package ramen noodles
 - 1/2 cup slivered almonds
 - 3/4 cup sunflower seeds.
@@ -21,7 +21,7 @@ Directions
 ----------
 Brown noodles and almonds on cookie sheet in 350 oven for 10 minutes or till light brown.
  
-Toss cabbage, onions, noodles, and seeds in bowls.
+Toss cabbage, hing, noodles, and seeds in bowls.
  
 Dressing:
 ---------
